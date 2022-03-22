@@ -19,8 +19,9 @@ function App() {
       <header className="App-header">
       { gobierno ? (<Prueba gobierno={gobierno} setGobierno={setGobierno} />) : 
       (<> <h2>Bievenido a esta app de pruebas</h2>
-       <button onClick={myApi}>Consumir Api</button> </>) }
-
+       <button onClick={myApi}>Ver Datos</button> </>) }
+       <br/>
+       <button onClick={myApi}>Click aqui para ver datos en consola</button>
       </header>
     </div>
   );
