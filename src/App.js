@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function App() {
 
-  const [gobierno, setGobierno] = useState(null);
+  const [gobierno, setGobierno] = useState(null); // Esta es para setear el estado con el que va a iniciar
 
   const myApi = async () => { // AQUI ESTA LA API
     const apiGob = await fetch('https://api.datos.gob.mx/v2/Records');
@@ -17,8 +17,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Prueba gobierno={gobierno} setGobierno={setGobierno} />
-        <button onClick={myApi}> Click aqui</button>
+      { gobierno ? (<Prueba gobierno={gobierno} setGobierno={setGobierno} />) : 
+      (<> <h2>Bievenido a esta app de pruebas</h2>
+       <button onClick={myApi}>Consumir Api</button> </>) }
+
       </header>
     </div>
   );
